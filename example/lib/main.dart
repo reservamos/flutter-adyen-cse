@@ -36,8 +36,7 @@ class _MyAppState extends State<MyApp> {
   Future<void> initAdyenCsePlugin() async {
     try {
       await FlutterAdyenCse.initAdyenCse(AdyenCseConfig(
-        publicKey: const String.fromEnvironment('ADYEN_PK'),
-        env: 'test',
+        publicKey: const String.fromEnvironment('ADYEN_PK', defaultValue: ''),
       ));
     } on PlatformException {
       rethrow;

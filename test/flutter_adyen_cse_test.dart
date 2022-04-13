@@ -23,7 +23,6 @@ void main() {
       () async => await FlutterAdyenCse.initAdyenCse(
         AdyenCseConfig(
           publicKey: '272727',
-          env: 'test',
         ),
       ),
       throwsA(isA<AssertionError>()),
