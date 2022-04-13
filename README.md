@@ -6,12 +6,12 @@ It is for project when you don't need use Adyen Drop-in integration and just nee
 
 # Requirements
 
-Check if your app is compatible:
+**Check if your app is compatible:**
 
 - Android mininal sdk version: 21 - Android Lollipop
 - iOS minimal build target: iOS 12.2
 
-Get your Client Encryption Public Key.
+**Get your Client Encryption Public Key.**
 
 You need to set this as your `publicKey` when using the `flutter_adyen_cse` plugin. To get your public key:
 
