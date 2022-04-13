@@ -64,104 +64,103 @@ class _MyAppState extends State<MyApp> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Adyen CSE demo'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextFormField(
-                controller: _numberController,
-                decoration: const InputDecoration(label: Text('card number')),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: TextFormField(
-                      controller: _expMonthController,
-                      decoration:
-                          const InputDecoration(label: Text('exp month')),
-                    ),
-                  ),
-                  const SizedBox(width: 30),
-                  Expanded(
-                    child: TextFormField(
-                      controller: _expYearController,
-                      decoration:
-                          const InputDecoration(label: Text('exp year')),
-                    ),
-                  ),
-                ],
-              ),
-              TextFormField(
-                controller: _cvvController,
-                decoration: const InputDecoration(label: Text('cvv')),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: MaterialButton(
-                  onPressed: () => encryptCard(),
-                  child: const Text(
-                    'Encrypt card',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
-                  ),
-                  color: Colors.blue,
+  Widget build(BuildContext context) => MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(
+            title: const Text('Adyen CSE demo'),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                TextFormField(
+                  controller: _numberController,
+                  decoration: const InputDecoration(label: Text('card number')),
                 ),
-              ),
-              const Divider(
-                color: Colors.black54,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
-                child: Row(
-                  children: const [
-                    Text('Result:'),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _expMonthController,
+                        decoration:
+                            const InputDecoration(label: Text('exp month')),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _expYearController,
+                        decoration:
+                            const InputDecoration(label: Text('exp year')),
+                      ),
+                    ),
                   ],
                 ),
-              ),
-              Expanded(
-                child: Material(
-                  type: MaterialType.card,
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.grey[200],
-                  child: result != null
-                      ? ListView.separated(
-                          itemCount: result!.keys.length,
-                          itemBuilder: (context, index) => Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: Text(
-                                  result!.keys.elementAt(index),
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
+                TextFormField(
+                  controller: _cvvController,
+                  decoration: const InputDecoration(label: Text('cvv')),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: MaterialButton(
+                    onPressed: () => encryptCard(),
+                    child: const Text(
+                      'Encrypt card',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                    color: Colors.blue,
+                  ),
+                ),
+                const Divider(
+                  color: Colors.black54,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: Row(
+                    children: const [
+                      Text('Result:'),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Material(
+                    type: MaterialType.card,
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[200],
+                    child: result != null
+                        ? ListView.separated(
+                            itemCount: result!.keys.length,
+                            itemBuilder: (context, index) => Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.symmetric(vertical: 10),
+                                  child: Text(
+                                    result!.keys.elementAt(index),
+                                    style: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Text(result!.values.elementAt(index)),
-                            ],
-                          ),
-                          separatorBuilder: (context, index) => const SizedBox(
-                            height: 20,
-                          ),
-                        )
-                      : Container(),
+                                Text(result!.values.elementAt(index)),
+                              ],
+                            ),
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(
+                              height: 20,
+                            ),
+                          )
+                        : Container(),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
-      ),
-    );
-  }
+      );
 }
