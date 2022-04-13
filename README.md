@@ -60,6 +60,13 @@ try {
 
 Step 3 - Use encrypted card data within `AdyenCseEncryptedCard` object.
 
+# Demo app
+
+you can see an example to use `flutter_adyen_cse` plugin in our [demo app](https://github.com/reservamos/flutter-adyen-cse/tree/main/example).
+
+<img src="https://user-images.githubusercontent.com/11278416/163242303-1e1e7d16-a003-40c1-9a67-35a91e7d6dbb.png" width=320 />
+
+
 # References
 
 - [Custom Card Integration](https://docs.adyen.com/payment-methods/cards/custom-card-integration)
