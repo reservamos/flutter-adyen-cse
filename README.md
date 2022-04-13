@@ -6,6 +6,11 @@ It is for project when you don't need use Adyen Drop-in integration and just nee
 
 # Requirements
 
+Check if your app is compatible:
+
+- Android mininal sdk version: 21 - Android Lollipop
+- iOS minimal build target: iOS 12.2
+
 Get your Client Encryption Public Key.
 
 You need to set this as your `publicKey` when using the `flutter_adyen_cse` plugin. To get your public key:
@@ -27,11 +32,11 @@ import 'package:flutter_adyen_cse/flutter_adyen_cse.dart';
 import 'package:flutter_adyen_cse/models/models.dart';
 
 try {
-    await FlutterAdyenCse.initAdyenCse(AdyenCseConfig(
-      publicKey: '<Your-Client-Encryption-Public-Key>'
-    ));
+  await FlutterAdyenCse.initAdyenCse(AdyenCseConfig(
+    publicKey: '<Your-Client-Encryption-Public-Key>'
+  ));
 } on PlatformException {
-    rethrow;
+  rethrow;
 }
 ```
 
@@ -44,18 +49,18 @@ import 'package:flutter_adyen_cse/flutter_adyen_cse.dart';
 import 'package:flutter_adyen_cse/models/models.dart';
 
 try {
-      final AdyenCseEncryptedCard? encryptedCard =
-          await FlutterAdyenCse.encryptCard(AdyenCseCard(
-        cardNumber: '4242424242424242',
-        expiryMonth: '12',
-        expiryYear: '2026',
-        securityCode: '737',
-      ));
+  final AdyenCseEncryptedCard? encryptedCard =
+      await FlutterAdyenCse.encryptCard(AdyenCseCard(
+    cardNumber: '4242424242424242',
+    expiryMonth: '12',
+    expiryYear: '2026',
+    securityCode: '737',
+  ));
 
-      if (encryptedCard != null) log(encryptedCard.toJson().toString());
-    } on PlatformException {
-      rethrow;
-    }
+  if (encryptedCard != null) log(encryptedCard.toJson().toString());
+} on PlatformException {
+  rethrow;
+}
 ```
 
 Step 3 - Use encrypted card data within `AdyenCseEncryptedCard` object.
@@ -65,7 +70,6 @@ Step 3 - Use encrypted card data within `AdyenCseEncryptedCard` object.
 you can see an example to use `flutter_adyen_cse` plugin in our [demo app](https://github.com/reservamos/flutter-adyen-cse/tree/main/example).
 
 <img src="https://user-images.githubusercontent.com/11278416/163242303-1e1e7d16-a003-40c1-9a67-35a91e7d6dbb.png" width=320 />
-
 
 # References
 
