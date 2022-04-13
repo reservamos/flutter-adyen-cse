@@ -6,7 +6,7 @@ Demonstrates how to use the flutter_adyen_cse plugin.
 
 This demo app was developed using next environment:
 
-```bash
+```
 [✓] Flutter (Channel stable, 2.10.4, on macOS 12.3.1 21E258 darwin-x64, locale en-MX)
 [✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
 [✓] Xcode - develop for iOS and macOS (Xcode 13.3.1)
@@ -58,4 +58,6 @@ By default all card information inputs are prefilled, but you can modify this in
 - card number must be numeric and lenght between 14 and 16 digits depends on card brand.
 - security code must be numeric and lenght between 3 or 4 digits depends on card brand.
 
-when all card information input are filled then tap `Encrypt card` button for see encrypted card result data.
+When all card information input are filled then tap `Encrypt card` button for see encrypted card result data.
+
+<img width="320" alt="Screen-Shot" src="https://user-images.githubusercontent.com/11278416/163249372-f1c055df-4ae1-4f61-9ca0-b5859ed3a035.png">
