@@ -1,7 +1,9 @@
 name: flutter_adyen_cse
 description: Adyen client side encryption library for flutter projects.
 version: 0.0.1
+repository: https://github.com/reservamos/flutter-adyen-cse
 homepage: https://github.com/reservamos/flutter-adyen-cse
+issue_tracker: https://github.com/reservamos/flutter-adyen-cse/issues?q=is%3Aopen
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
