@@ -47,6 +47,6 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.adyen.checkout:cse:4.1.0"
+    implementation "com.adyen.checkout:cse:5.3.0"
     implementation "com.adyen.threeds:adyen-3ds2:2.2.4"
 }
